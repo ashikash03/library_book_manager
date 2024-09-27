@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Library Manager</title>
+  <!-- Tailwind Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="h-screen flex items-center justify-center">
+
+  <!-- Main Container -->
+  <div class="container mx-auto p-8">
+    <!-- Header -->
+    <h1 class="text-4xl font-bold text-center text-white mb-8">Book Library Manager</h1>
+
+    <!-- Cards Section -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Store Book Card -->
+      <div class="glass-effect p-6 rounded-xl text-center">
+        <h2 class="text-xl font-bold text-blue-600 mb-4">Enter Book Details</h2>
+        <form id="storeForm">
+          <input type="text" placeholder="Book Title" class="w-full p-2 mb-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <input type="text" placeholder="Author" class="w-full p-2 mb-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <input type="text" placeholder="ISBN" class="w-full p-2 mb-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <button class="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600">Store Book</button>
+        </form>
+      </div>
+
+      <!-- Retrieve Book Card -->
+      <div class="glass-effect p-6 rounded-xl text-center">
+        <h2 class="text-xl font-bold text-blue-600 mb-4">Retrieve Book by ISBN</h2>
+        <form id="retrieveForm">
+          <input type="text" placeholder="ISBN" class="w-full p-2 mb-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <button class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">Retrieve Book</button>
+        </form>
+      </div>
+
+      <!-- Delete Book Card -->
+      <div class="glass-effect p-6 rounded-xl text-center">
+        <h2 class="text-xl font-bold text-blue-600 mb-4">Delete Book by ISBN</h2>
+        <form id="deleteForm">
+          <input type="text" placeholder="ISBN" class="w-full p-2 mb-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <button class="w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600">Delete Book</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Clear All Button -->
+    <div class="text-center mt-8">
+      <button class="px-6 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-900">Clear All Books</button>
+    </div>
+  </div>
+
+</body>
+</html>
