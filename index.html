@@ -7,7 +7,7 @@
   <!-- Tailwind Play CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="./script.js"></script>
-    <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body class="h-screen flex items-center justify-center">
 
@@ -22,10 +22,10 @@
       <div class="glass-effect p-6 rounded-xl text-center">
         <h2 class="text-xl font-bold text-green-500 mb-4">Enter Book Details</h2>
         <form id="storeForm">
-          <input type="text" placeholder="Book Title" class="w-full p-2 mb-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
-          <input type="text" placeholder="Author" class="w-full p-2 mb-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
-          <input type="text" placeholder="ISBN" class="w-full p-2 mb-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
-          <button class="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600">Store Book</button>
+          <input type="text" id="book_title" placeholder="Book Title" class="w-full p-2 mb-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <input type="text" id="author_name" placeholder="Author" class="w-full p-2 mb-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <input type="text" id="isbn" placeholder="ISBN" class="w-full p-2 mb-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <button type="button" onclick="storeBook(event)" class="w-full bg-green-500 text-white py-2 rounded-lg hover:bg-green-600">Store Book</button>
         </form>
       </div>
 
@@ -33,24 +33,31 @@
       <div class="glass-effect p-6 rounded-xl text-center">
         <h2 class="text-xl font-bold text-blue-600 mb-4">Retrieve Book by ISBN</h2>
         <form id="retrieveForm">
-          <input type="text" placeholder="ISBN" class="w-full p-2 mb-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
-          <button class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">Retrieve Book</button>
+          <input id="retrieve_isbn" type="text" placeholder="ISBN" class="w-full p-2 mb-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <button type="button" onclick="retrieveBook(event)" class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600">Retrieve Book</button>
         </form>
+        <div id="rbookDetails" class="mt-4 hidden glass-effect p-4 rounded-xl">
+          <form id="retriveForm">
+            <input type="text" id="rbook_title" placeholder="Book Title" class="w-full p-2 mb-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <input type="text" id="rauthor_name" placeholder="Author" class="w-full p-2 mb-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <input type="text" id="risbn" placeholder="ISBN" class="w-full p-2 mb-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          </form>
+        </div>
       </div>
 
       <!-- Delete Book Card -->
       <div class="glass-effect p-6 rounded-xl text-center">
         <h2 class="text-xl font-bold text-red-500 mb-4">Delete Book by ISBN</h2>
         <form id="deleteForm">
-          <input type="text" placeholder="ISBN" class="w-full p-2 mb-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
-          <button class="w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600">Delete Book</button>
+          <input id="deleteIsbn" type="text" placeholder="ISBN" class="w-full p-2 mb-4 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <button onclick="deleteBook()" class="w-full bg-red-500 text-white py-2 rounded-lg hover:bg-red-600">Delete Book</button>
         </form>
       </div>
     </div>
 
     <!-- Clear All Button -->
     <div class="text-center mt-8">
-      <button class="px-6 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-900">Clear All Books</button>
+      <button onclick="clearBook()" class="px-6 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-900">Clear All Books</button>
     </div>
   </div>
 
